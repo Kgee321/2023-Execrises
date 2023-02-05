@@ -3,11 +3,11 @@
 # Create dictionary
 dic = {}
 
-
 # Asking for student name and grade
 question = input("Student name and mark: ").split(" ")
 
 while question[0].lower() != "x":
+
     # Making the grade an integer
     mark = int(question[1])
 
