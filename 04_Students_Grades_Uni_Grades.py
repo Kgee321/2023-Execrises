@@ -10,9 +10,15 @@ while question[0].lower() != "x":
 
     # Making the grade an integer
     mark = int(question[1])
+    tenths = int(question[1][0])
+    zeros = int(question[1][1])
 
     # Adding name and mark to dictionary
     dic[mark] = question[0]
+
+    # Uni grade
+    if 8 < tenths > 9:
+        grade = "A"
 
     # Asking for student name and grade
     question = input("Student name and mark: ").split(" ")
@@ -37,3 +43,5 @@ average = total/len(number_list)
 # Outputting average mark of students
 print()
 print(f"The average mark of all the students was {average}")
+
+
