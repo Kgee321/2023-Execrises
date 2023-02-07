@@ -1,19 +1,25 @@
 """ Take student name and mark. Output top students and average student """
 
-# Create dictionary
-dic = {}
-dic2 = {}
+# Create lists
+students = []
+grades = []
+uni = []
 
 # Asking for student name and grade
 question = input("Student name and mark: ").split(" ")
 
 while question[0].lower() != "x":
 
-    # Making the grade an integer
+    # Separating inputs
+    name = question[0]
     mark = int(question[1])
 
-    # Adding name and mark to dictionary
-    dic[mark] = question[0]
+    # Adding input to lists
+    students.append(name)
+    grades.append(mark)
+
+    # Asking question again
+    question = input("Student name and mark: ").split(" ")
 
     # Uni grade finding from mark
     if mark > 90:
@@ -39,38 +45,38 @@ while question[0].lower() != "x":
     elif 0 < mark < 39:
         grade = "E"
 
+    uni.append(grade)
 
-    # Adding grades to dictionary
-    dic2[grade] = question[0]
+# Creating variables
+highest = 0
+num_list = []
+count = 0
 
-    # Asking for student name and grade
-    question = input("Student name and mark: ").split(" ")
+# Finding highest grade
+for num in grades:
+    if num > highest:
+        highest = num
+        num_list.append(count)
+    count += 1
 
-# Dictionary is sorted by value
-number_list = sorted(dic)
+# Finding the index of the highest grade
+index = num_list[-1]
 
-# highest value found
-highest = number_list[-1]
-
-# Outputting student with the highest grade
+# Outputting the student with the highest grade
 print()
-print(f"The student who got the best mark was {dic[highest].title()} with a mark of {highest}.")
+print(f"The student who got the best mark was {students[index].title()} with a mark of {highest}.")
 
-# Total sum of numbers
-total = 0
-for i in number_list:
-    total += i
-
-# Average of numbers found
-average = total/len(number_list)
+# Average find
+average = sum(grades)/len(grades)
 
 # Outputting average mark of students
 print()
 print(f"The average mark of all the students was {average}")
 
-# Outputting all students with uni grade
+# Outputting students and their uni grade
 print()
-for keys, value in dic2.items():
-    print(value.title() + ": " + keys)
+for i in range(len(students)):
+    print(uni[i-1], students[i-1])
+
 
 

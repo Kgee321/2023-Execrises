@@ -20,6 +20,7 @@ while question[0].lower() != "x":
     # Asking question again
     question = input("Student name and mark: ").split(" ")
 
+
 # Creating variables
 highest = 0
 num_list = []
@@ -37,6 +38,7 @@ index = num_list[-1]
 
 # outputting the student with highest grade
 print(f"The student who got the best mark was {students[index].title()} with a mark of {highest}.")
+
 
 
 
