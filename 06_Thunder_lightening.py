@@ -21,6 +21,6 @@ km = distance / 1000
 
 # Outputting distance
 print()
-print(f"The storm is {distance:.3f} meters away and {round(km, 3)} kms away")
+print(f"The storm is {distance:.2f} meters away and {round(km, 2)} kms away")
 
 

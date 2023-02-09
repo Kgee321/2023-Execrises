@@ -16,24 +16,31 @@ while True:
 
         # Separating activity and hours
         act = activity_hours[0].lower()
-        hours = activity_hours[1]
+        hours = int(activity_hours[1])
 
         # Adding calories based on activity
         if act == "bike":
-            calories.append(BIKE)
+            calories.append(BIKE*hours)
         elif act == "jog":
-            calories.append(JOG)
+            calories.append(JOG*hours)
         elif act == "swim":
-            calories.append(SWIM)
+            calories.append(SWIM*hours)
         else:
             print("Not the right input. Please enter Bike, Jog or Swim")
-            break
 
-    # User inputs activity and their hours
-    activity_hours = input("Activity and Hours: ").split(" ")
+        # User inputs activity and their hours
+        activity_hours = input("Activity and Hours: ").split(" ")
+    break
 
-# Testing
-print(calories)
+# Finding kgs
+total = sum(calories)
+kgs = ((total / 3500) * 454) / 1000
+
+# Output total kgs
+print()
+print(f"You lost {kgs:.3f} kgs")
+
+
 
 
 

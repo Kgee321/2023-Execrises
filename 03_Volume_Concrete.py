@@ -23,7 +23,7 @@ while True:
 
         # Breaking the loop is R or C or X is not the input
         else:
-            print("That is not a correct building type")
+            print("That is not a correct building type. Please enter R or C")
             break
 
         # Asking for measurements
